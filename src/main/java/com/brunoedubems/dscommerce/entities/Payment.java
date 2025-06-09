@@ -23,7 +23,7 @@ public class Payment {
   private Instant moment;
 
   @OneToOne
-  @MapsId
+  @MapsId // usando o mesmo id o order para cada pagamento, não gerando o id dessa classe
   private Order order;
 
   public Payment() {

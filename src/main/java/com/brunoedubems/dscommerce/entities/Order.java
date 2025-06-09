@@ -82,11 +82,11 @@ public class Order {
     this.client = client;
   }
 
-  public Set<OrderItem> getItems(){
+  public Set<OrderItem> getItems() {
     return items;
   }
 
-  public List<Product> getProducts(){
-    return items.stream().map(x-> x.getProduct()).toList();
+  public List<Product> getProducts() {
+    return items.stream().map(x -> x.getProduct()).toList();
   }
 }

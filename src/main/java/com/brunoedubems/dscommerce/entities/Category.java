@@ -10,7 +10,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
-
 @Entity
 @Table(name = "tb_category")
 public class Category {
@@ -23,8 +22,7 @@ public class Category {
   @ManyToMany(mappedBy = "categories")
   private Set<Product> products = new HashSet<>();
 
-
-  public Category(){
+  public Category() {
 
   }
 
@@ -49,10 +47,8 @@ public class Category {
     this.name = name;
   }
 
-
   public Set<Product> getProducts() {
     return products;
   }
-  
 
 }
