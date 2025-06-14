@@ -4,7 +4,7 @@ package com.brunoedubems.dscommerce.dto;
 import com.brunoedubems.dscommerce.entities.Product;
 
 public class ProductDTO {
-    private Long id;
+  private Long id;
   private String name;
 
   private String description;

@@ -1,16 +1,16 @@
 package com.brunoedubems.dscommerce.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
-
 import com.brunoedubems.dscommerce.dto.ProductDTO;
-
 import com.brunoedubems.dscommerce.services.ProductService;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -44,5 +44,14 @@ public class ProductController {
    // return dto;
    return service.findById(id);
   }
+  // @GetMapping()
+  // public List<ProductDTO> findAll(Pageable pageable) {
+  //  return service.findAll(pageable);
+  // }
+  @GetMapping()
+  public Page<ProductDTO> findAll(Pageable pageable) {
+   return service.findAll(pageable);
+  }
+
 
 }
