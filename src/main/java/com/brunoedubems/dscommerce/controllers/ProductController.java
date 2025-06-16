@@ -6,6 +6,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.brunoedubems.dscommerce.dto.ProductDTO;
 import com.brunoedubems.dscommerce.services.ProductService;
 
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -79,7 +81,7 @@ public class ProductController {
   // return service.insert(dto);
   // }
   @PostMapping
-  public ResponseEntity<ProductDTO> insert(@RequestBody ProductDTO dto) {
+  public ResponseEntity<ProductDTO> insert(@Valid @RequestBody ProductDTO dto) {
     dto = service.insert(dto);
     URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}") //Pega a URL atual da requisição + atual url "id"
         .buildAndExpand(dto.getId())//Substitui {id} pelo ID real do produto que acabou de ser inserido
