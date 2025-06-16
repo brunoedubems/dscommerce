@@ -80,11 +80,10 @@ public class ProductController {
   // }
   @PostMapping
   public ResponseEntity<ProductDTO> insert(@RequestBody ProductDTO dto) {
-
     dto = service.insert(dto);
-    URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-        .buildAndExpand(dto.getId()).toUri();
-
+    URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}") //Pega a URL atual da requisição + atual url "id"
+        .buildAndExpand(dto.getId())//Substitui {id} pelo ID real do produto que acabou de ser inserido
+        .toUri();  //Constrói a URI final 
     return ResponseEntity.created(uri).body(dto);
   }
 
