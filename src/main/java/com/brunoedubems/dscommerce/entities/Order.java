@@ -30,7 +30,7 @@ public class Order {
   private OrderStatus status;
 
   @ManyToOne
-  @JoinColumn(name = "client_id")
+  @JoinColumn(name = "client_id") // ###### MUITOS PARA UM
   private User client;
 
   @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)

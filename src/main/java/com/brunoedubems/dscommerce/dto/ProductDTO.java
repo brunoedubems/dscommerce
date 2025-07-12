@@ -4,8 +4,6 @@ package com.brunoedubems.dscommerce.dto;
 import com.brunoedubems.dscommerce.entities.Product;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 
@@ -22,11 +20,13 @@ public class ProductDTO {
 
   @Positive(message = "O preço deve ser positivo")
   private Double price;
+
   private String imgUrl;
 
 
   public ProductDTO() {
   }
+  
   public ProductDTO(Long id, String name, String description, Double price, String imgUrl) {
     this.id = id;
     this.name = name;
