@@ -1,0 +1,24 @@
+{
+  "properties": [
+    {
+      "name": "cors.origins",
+      "type": "java.lang.String",
+      "description": "Origem permitida no CORS (ex: http://localhost:3000)"
+    },
+    {
+      "name": "security.jwt.duration",
+      "type": "java.lang.String",
+      "description": "Duração do token JWT"
+    },
+    {
+      "name": "security.client-secret",
+      "type": "java.lang.String",
+      "description": "Client Secret para autenticação"
+    },
+    {
+      "name": "security.client-id",
+      "type": "java.lang.String",
+      "description": "Client ID para autenticação"
+    }
+  ]
+}
